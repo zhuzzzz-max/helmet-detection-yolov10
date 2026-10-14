@@ -4,8 +4,6 @@
 数据集：SHWD（Safety Helmet Wearing Dataset），7,581 张已标注工地图像，
 Pascal VOC 格式，官方仓库 <https://github.com/njvisionpower/Safety-Helmet-Wearing-Dataset>。
 
-## Results（训练完成后补充，便于在简历/邮件中引用）
-
 | Model | Epochs | Precision | Recall | mAP@0.5 | mAP@0.5:0.95 |
 |---|---|---|---|---|---|
 | YOLOv10n | 100 | _to be filled_ | _to be filled_ | _to be filled_ | _to be filled_ |
