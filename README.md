@@ -1,15 +1,31 @@
-# 基于 YOLOv10 的施工现场安全帽佩戴检测（SHWD 基线）
+# 基于 YOLOv10 的施工现场安全帽佩戴检测
 
 2 分类目标检测：`hat`（佩戴安全帽）/ `head`（未佩戴安全帽的裸头）。
-数据集：SHWD（Safety Helmet Wearing Dataset），7,581 张已标注工地图像，
-Pascal VOC 格式，官方仓库 <https://github.com/njvisionpower/Safety-Helmet-Wearing-Dataset>。
+实现并训练 YOLOv10n，从数据清洗、GPU 训练到评估出图的完整 CV pipeline。
 
-| Model | Epochs | Precision | Recall | mAP@0.5 | mAP@0.5:0.95 |
+## Results
+
+**检测效果（测试集）：**
+
+![detection](pics/06_prediction_result.jpg)
+
+**训练曲线（loss / Precision-Recall / mAP）：**
+
+![training](pics/01_training_curves.png)
+
+**混淆矩阵：**
+
+![confusion](pics/02_confusion_matrix.png)
+
+| Model | Split | Precision | Recall | mAP@0.5 | mAP@0.5:0.95 |
 |---|---|---|---|---|---|
-| YOLOv10n | 100 | _to be filled_ | _to be filled_ | _to be filled_ | _to be filled_ |
-| YOLOv10s | 100 | _to be filled_ | _to be filled_ | _to be filled_ | _to be filled_ |
+| YOLOv10n | Val | 0.930 | 0.858 | **0.930** | 0.594 |
+| YOLOv10n | Test | 0.921 | 0.812 | **0.903** | 0.588 |
 
-> 训练日志：`outputs/runs/.../results.png`；指标汇总：`outputs/reports/metrics_summary.json`。
+- 模型仅 2.28M 参数 / 6.7 GFLOPs，单图推理约 6 ms（≈160 FPS）。
+- 更多图（PR/F1 曲线、真值 vs 预测、检测样例）见 [`pics/`](pics/)。
+
+> 注：当前为训练约 16 轮的中间结果，mAP@0.5 仍在上升。数据集采用公开 Hard Hat Workers（5000 张工地图，已对齐为 hat/head 两类）。
 
 ## 目录结构
 
