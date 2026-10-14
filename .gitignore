@@ -1,0 +1,28 @@
+# ===== 数据集（体积大，不入库；README 里有下载方式）=====
+data/raw/
+data/processed/
+
+# ===== 训练输出与报告（运行后生成，属于个人结果）=====
+outputs/runs/
+outputs/reports/*
+!outputs/reports/.gitkeep
+outputs/*.yaml
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# ===== 权重 / 大文件 =====
+*.pt
+*.onnx
+*.engine
+
+# ===== 系统 / 编辑器 =====
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

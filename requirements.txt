@@ -1,0 +1,13 @@
+# YOLOv10 安全帽检测项目依赖
+# Python 3.10 / 3.11 + CUDA 11.8 或 12.1（GPU 训练）
+ultralytics>=8.3.0      # 已集成 YOLOv10，模型名 yolov10n.pt / yolov10s.pt
+Pillow>=10.0.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+PyYAML>=6.0
+tqdm>=4.65.0
+# GPU 版 PyTorch 请按本机 CUDA 版本从 https://pytorch.org/get-started/locally/
+# 选择安装命令，例如 CUDA 12.1：
+# pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121

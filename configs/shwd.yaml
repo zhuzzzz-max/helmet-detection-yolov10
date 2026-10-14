@@ -1,0 +1,13 @@
+# SHWD 安全帽检测数据集配置（ultralytics 格式）
+# 注意：path 会在 05_train.py 启动时自动改写为当前机器的绝对路径，
+#       无需手工修改，仓库整体拷贝到别的目录也能直接训练。
+path: ../data/processed
+train: images/train
+val: images/val
+test: images/test
+
+# 类别数与类别名（由 SHWD 原始 hat/person 映射而来；person 即未戴安全帽的裸头）
+nc: 2
+names:
+  0: hat
+  1: head
